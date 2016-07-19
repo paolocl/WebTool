@@ -1,0 +1,75 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Affiliation
+ *
+ * @ORM\Table(name="affiliation")
+ * @ORM\Entity
+ */
+class Affiliation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_site", type="integer", nullable=false)
+     */
+    private $idSite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_lien", type="integer", nullable=false)
+     */
+    private $idLien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lien", type="string", length=250, nullable=false)
+     */
+    private $lien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name_link", type="string", length=100, nullable=true)
+     */
+    private $nameLink;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date", type="string", length=20, nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_last", type="string", length=20, nullable=false)
+     */
+    private $dateLast = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="many_to_one", type="string")
+     */
+    private $manyToOne;
+
+
+}
+

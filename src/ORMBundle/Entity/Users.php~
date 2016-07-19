@@ -1,0 +1,138 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Users
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity
+ */
+class Users
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var binary
+     *
+     * @ORM\Column(name="ip_address", type="binary", nullable=false)
+     */
+    private $ipAddress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=100, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=80, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="salt", type="string", length=40, nullable=true)
+     */
+    private $salt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="activation_code", type="string", length=40, nullable=true)
+     */
+    private $activationCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="forgotten_password_code", type="string", length=40, nullable=true)
+     */
+    private $forgottenPasswordCode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="forgotten_password_time", type="integer", nullable=true)
+     */
+    private $forgottenPasswordTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="remember_code", type="string", length=40, nullable=true)
+     */
+    private $rememberCode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created_on", type="integer", nullable=false)
+     */
+    private $createdOn;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="last_login", type="integer", nullable=true)
+     */
+    private $lastLogin;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=50, nullable=true)
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=50, nullable=true)
+     */
+    private $lastName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="company", type="string", length=100, nullable=true)
+     */
+    private $company;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=20, nullable=true)
+     */
+    private $phone;
+
+
+}
+

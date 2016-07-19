@@ -1,0 +1,61 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Sqls
+ *
+ * @ORM\Table(name="sqls")
+ * @ORM\Entity
+ */
+class Sqls
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="host", type="string", length=30, nullable=false)
+     */
+    private $host;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="base", type="string", length=30, nullable=false)
+     */
+    private $base;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=30, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=30, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=false)
+     */
+    private $url;
+
+
+}
+

@@ -1,0 +1,47 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TemporaryUrl
+ *
+ * @ORM\Table(name="temporary_url")
+ * @ORM\Entity
+ */
+class TemporaryUrl
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=false)
+     */
+    private $url;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="mobile", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $mobile;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="desktop", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $desktop;
+
+
+}
+

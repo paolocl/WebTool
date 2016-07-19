@@ -1,0 +1,97 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Access
+ *
+ * @ORM\Table(name="access")
+ * @ORM\Entity
+ */
+class Access
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_access", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAccess;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_groups", type="integer", nullable=false)
+     */
+    private $idGroups;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="uri", type="string", length=150, nullable=false)
+     */
+    private $uri;
+
+
+
+    /**
+     * Get idAccess
+     *
+     * @return integer
+     */
+    public function getIdAccess()
+    {
+        return $this->idAccess;
+    }
+
+    /**
+     * Set idGroups
+     *
+     * @param integer $idGroups
+     *
+     * @return Access
+     */
+    public function setIdGroups($idGroups)
+    {
+        $this->idGroups = $idGroups;
+
+        return $this;
+    }
+
+    /**
+     * Get idGroups
+     *
+     * @return integer
+     */
+    public function getIdGroups()
+    {
+        return $this->idGroups;
+    }
+
+    /**
+     * Set uri
+     *
+     * @param string $uri
+     *
+     * @return Access
+     */
+    public function setUri($uri)
+    {
+        $this->uri = $uri;
+
+        return $this;
+    }
+
+    /**
+     * Get uri
+     *
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+}

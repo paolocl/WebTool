@@ -1,0 +1,47 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BackOffice
+ *
+ * @ORM\Table(name="back_office")
+ * @ORM\Entity
+ */
+class BackOffice
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url_admin", type="string", length=200, nullable=false)
+     */
+    private $urlAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user_admin", type="string", length=20, nullable=false)
+     */
+    private $userAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pass_admin", type="string", length=40, nullable=false)
+     */
+    private $passAdmin;
+
+
+}
+

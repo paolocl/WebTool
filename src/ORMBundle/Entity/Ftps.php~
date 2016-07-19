@@ -1,0 +1,54 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Ftps
+ *
+ * @ORM\Table(name="ftps", indexes={@ORM\Index(name="id_ips_fk", columns={"id_hosts"}), @ORM\Index(name="id_hosts", columns={"id_hosts"}), @ORM\Index(name="id_ips", columns={"id_ips"})})
+ * @ORM\Entity
+ */
+class Ftps
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_hosts", type="integer", nullable=false)
+     */
+    private $idHosts;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_ips", type="integer", nullable=false)
+     */
+    private $idIps;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user", type="string", length=30, nullable=false)
+     */
+    private $user;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=30, nullable=false)
+     */
+    private $password;
+
+
+}
+

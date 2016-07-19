@@ -1,0 +1,382 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Apps
+ *
+ * @ORM\Table(name="apps", indexes={@ORM\Index(name="fk_apps_os", columns={"os"}), @ORM\Index(name="apps_state_fk_1", columns={"state"})})
+ * @ORM\Entity
+ */
+class Apps
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_apps", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idApps;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_name", type="string", length=50, nullable=true)
+     */
+    private $imageName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="store_link", type="string", length=150, nullable=true)
+     */
+    private $storeLink;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="admin_store_link", type="string", length=150, nullable=true)
+     */
+    private $adminStoreLink;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="android_keystore", type="string", length=50, nullable=true)
+     */
+    private $androidKeystore;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="stats_link", type="string", length=150, nullable=true)
+     */
+    private $statsLink;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pushmedia_link", type="string", length=150, nullable=true)
+     */
+    private $pushmediaLink;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="infos", type="text", length=65535, nullable=true)
+     */
+    private $infos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reviews_link", type="string", length=150, nullable=true)
+     */
+    private $reviewsLink;
+
+    /**
+     * @var \ORMBundle\Entity\AppsOs
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\AppsOs")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="os", referencedColumnName="name")
+     * })
+     */
+    private $os;
+
+    /**
+     * @var \ORMBundle\Entity\AppsState
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\AppsState")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="state", referencedColumnName="name")
+     * })
+     */
+    private $state;
+
+
+
+    /**
+     * Get idApps
+     *
+     * @return integer
+     */
+    public function getIdApps()
+    {
+        return $this->idApps;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Apps
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set imageName
+     *
+     * @param string $imageName
+     *
+     * @return Apps
+     */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
+
+        return $this;
+    }
+
+    /**
+     * Get imageName
+     *
+     * @return string
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+    /**
+     * Set storeLink
+     *
+     * @param string $storeLink
+     *
+     * @return Apps
+     */
+    public function setStoreLink($storeLink)
+    {
+        $this->storeLink = $storeLink;
+
+        return $this;
+    }
+
+    /**
+     * Get storeLink
+     *
+     * @return string
+     */
+    public function getStoreLink()
+    {
+        return $this->storeLink;
+    }
+
+    /**
+     * Set adminStoreLink
+     *
+     * @param string $adminStoreLink
+     *
+     * @return Apps
+     */
+    public function setAdminStoreLink($adminStoreLink)
+    {
+        $this->adminStoreLink = $adminStoreLink;
+
+        return $this;
+    }
+
+    /**
+     * Get adminStoreLink
+     *
+     * @return string
+     */
+    public function getAdminStoreLink()
+    {
+        return $this->adminStoreLink;
+    }
+
+    /**
+     * Set androidKeystore
+     *
+     * @param string $androidKeystore
+     *
+     * @return Apps
+     */
+    public function setAndroidKeystore($androidKeystore)
+    {
+        $this->androidKeystore = $androidKeystore;
+
+        return $this;
+    }
+
+    /**
+     * Get androidKeystore
+     *
+     * @return string
+     */
+    public function getAndroidKeystore()
+    {
+        return $this->androidKeystore;
+    }
+
+    /**
+     * Set statsLink
+     *
+     * @param string $statsLink
+     *
+     * @return Apps
+     */
+    public function setStatsLink($statsLink)
+    {
+        $this->statsLink = $statsLink;
+
+        return $this;
+    }
+
+    /**
+     * Get statsLink
+     *
+     * @return string
+     */
+    public function getStatsLink()
+    {
+        return $this->statsLink;
+    }
+
+    /**
+     * Set pushmediaLink
+     *
+     * @param string $pushmediaLink
+     *
+     * @return Apps
+     */
+    public function setPushmediaLink($pushmediaLink)
+    {
+        $this->pushmediaLink = $pushmediaLink;
+
+        return $this;
+    }
+
+    /**
+     * Get pushmediaLink
+     *
+     * @return string
+     */
+    public function getPushmediaLink()
+    {
+        return $this->pushmediaLink;
+    }
+
+    /**
+     * Set infos
+     *
+     * @param string $infos
+     *
+     * @return Apps
+     */
+    public function setInfos($infos)
+    {
+        $this->infos = $infos;
+
+        return $this;
+    }
+
+    /**
+     * Get infos
+     *
+     * @return string
+     */
+    public function getInfos()
+    {
+        return $this->infos;
+    }
+
+    /**
+     * Set reviewsLink
+     *
+     * @param string $reviewsLink
+     *
+     * @return Apps
+     */
+    public function setReviewsLink($reviewsLink)
+    {
+        $this->reviewsLink = $reviewsLink;
+
+        return $this;
+    }
+
+    /**
+     * Get reviewsLink
+     *
+     * @return string
+     */
+    public function getReviewsLink()
+    {
+        return $this->reviewsLink;
+    }
+
+    /**
+     * Set os
+     *
+     * @param \ORMBundle\Entity\AppsOs $os
+     *
+     * @return Apps
+     */
+    public function setOs(\ORMBundle\Entity\AppsOs $os = null)
+    {
+        $this->os = $os;
+
+        return $this;
+    }
+
+    /**
+     * Get os
+     *
+     * @return \ORMBundle\Entity\AppsOs
+     */
+    public function getOs()
+    {
+        return $this->os;
+    }
+
+    /**
+     * Set state
+     *
+     * @param \ORMBundle\Entity\AppsState $state
+     *
+     * @return Apps
+     */
+    public function setState(\ORMBundle\Entity\AppsState $state = null)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return \ORMBundle\Entity\AppsState
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+}

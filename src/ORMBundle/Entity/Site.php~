@@ -1,0 +1,224 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Site
+ *
+ * @ORM\Table(name="site", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_694309E4E26315E6", columns={"id_site"})}, indexes={@ORM\Index(name="id_site", columns={"id_site"}), @ORM\Index(name="id_ftps", columns={"id_ftps", "id_registrar", "id_ips", "id_hosts", "id_type_projet"}), @ORM\Index(name="IDX_694309E41E2F23D", columns={"id_ftps"}), @ORM\Index(name="IDX_694309E46AF75AAF", columns={"id_analytics"}), @ORM\Index(name="id_sqls", columns={"id_sqls"}), @ORM\Index(name="id_back_office", columns={"id_back_office"}), @ORM\Index(name="id_page_speed", columns={"id_page_speed"})})
+ * @ORM\Entity
+ */
+class Site
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_site", type="integer", nullable=false)
+     */
+    private $idSite = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="md5", type="string", length=100, nullable=false)
+     */
+    private $md5 = '25f22f8dzz';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_ftps", type="integer", nullable=false)
+     */
+    private $idFtps;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_registrar", type="integer", nullable=false)
+     */
+    private $idRegistrar;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_sqls", type="integer", nullable=true)
+     */
+    private $idSqls;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_ips", type="integer", nullable=false)
+     */
+    private $idIps;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_hosts", type="integer", nullable=false)
+     */
+    private $idHosts;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_type_projet", type="integer", nullable=false)
+     */
+    private $idTypeProjet;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_analytics", type="integer", nullable=true)
+     */
+    private $idAnalytics;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_back_office", type="integer", nullable=true)
+     */
+    private $idBackOffice;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_page_speed", type="integer", nullable=true)
+     */
+    private $idPageSpeed;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="ORMBundle\Entity\Affiliation", mappedBy="site")
+     */
+    private $affiliation;
+
+    /**
+     * @var \ORMBundle\Entity\Urls
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\Urls")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_site", referencedColumnName="id")
+     * })
+     */
+    private $urls;
+
+    /**
+     * @var \ORMBundle\Entity\Ftps
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\Ftps")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_ftps", referencedColumnName="id")
+     * })
+     */
+    private $ftps;
+
+    /**
+     * @var \ORMBundle\Entity\Analytics
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\Analytics")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_analytics", referencedColumnName="id")
+     * })
+     */
+    private $analytics;
+
+    /**
+     * @var \ORMBundle\Entity\Registrar
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\Registrar")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_registrar", referencedColumnName="id")
+     * })
+     */
+    private $registrar;
+
+    /**
+     * @var \ORMBundle\Entity\Sqls
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\Sqls")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_sqls", referencedColumnName="id")
+     * })
+     */
+    private $sqls;
+
+    /**
+     * @var \ORMBundle\Entity\Ips
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\Ips")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_ips", referencedColumnName="id")
+     * })
+     */
+    private $ips;
+
+    /**
+     * @var \ORMBundle\Entity\Hosts
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\Hosts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_hosts", referencedColumnName="id")
+     * })
+     */
+    private $hosts;
+
+    /**
+     * @var \ORMBundle\Entity\TypeProjet
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\TypeProjet")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_type_projet", referencedColumnName="id")
+     * })
+     */
+    private $type_projet;
+
+    /**
+     * @var \ORMBundle\Entity\PageSpeed
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\PageSpeed")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_site", referencedColumnName="id")
+     * })
+     */
+    private $page_speed;
+
+    /**
+     * @var \ORMBundle\Entity\BackOffice
+     *
+     * @ORM\ManyToOne(targetEntity="ORMBundle\Entity\BackOffice")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_back_office", referencedColumnName="id")
+     * })
+     */
+    private $back_office;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->affiliation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

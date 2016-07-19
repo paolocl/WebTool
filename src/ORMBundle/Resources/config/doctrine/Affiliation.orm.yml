@@ -1,0 +1,59 @@
+ORMBundle\Entity\Affiliation:
+    type: entity
+    table: affiliation
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        idSite:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_site
+        idLien:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_lien
+        lien:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        nameLink:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: name_link
+        date:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        dateLast:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+                default: '0'
+            column: date_last
+        manyToOne:
+            site:
+                targetEntity: Site
+                joinColumn:
+                    name: id_site
+                    referencedColumnName: id_site
+    lifecycleCallbacks: {  }

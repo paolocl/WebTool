@@ -1,0 +1,31 @@
+<ul class="col-xs-12 list-unstyled">
+    {{ dump(data.affiliation) }}
+    <li class="col-md-3 col-sm-4">Name : {{ data.nom }}</li>
+    {% if data.idPageSpeed is not null %}
+        <li class="col-md-3 col-sm-4">PageSpeed Desktop : {{ data.pageSpeed.desktop }}</li>
+        <li class="col-md-3 col-sm-4">PageSpeed Mobile : {{ data.pageSpeed.mobile }}</li>
+        <li class="col-md-3 col-sm-4">PageSpeed Last update : {{ data.pageSpeed.lastUpdate }}</li>
+    {% endif %}
+    <li class="col-md-3 col-sm-4">FTP Url : {{ data.urls.url }}</li>
+    <li class="col-md-3 col-sm-4">FTP Loggin : {{ data.ftps.user }}</li>
+    <li class="col-md-3 col-sm-4">FTP Password : {{ data.ftps.password }}</li>
+    <li class="col-md-3 col-sm-4">Analitycs code : {{ data.analytics }}</li>
+    <li class="col-md-3 col-sm-4">Registrar Name : {{ data.registrar.nom }}</li>
+    <li class="col-md-3 col-sm-4">Registrar Login : {{ data.registrar.login }}</li>
+    <li class="col-md-3 col-sm-4">registrar Password : {{ data.registrar.password }}</li>
+    <li class="col-md-3 col-sm-4">DNS1 : {{ data.registrar.dns1 }}</li>
+    <li class="col-md-3 col-sm-4">DNS2 : {{ data.registrar.dns2 }}</li>
+    <li class="col-md-3 col-sm-4">Prix : {{ data.registrar.prix }}</li>
+
+    {% if data.sqls is not null %}
+        <li class="col-md-3 col-sm-4">Data Base Host : {{ data.sqls.host }}</li>
+        <li class="col-md-3 col-sm-4">Data Base Name : {{ data.sqls.base }}</li>
+        <li class="col-md-3 col-sm-4">Data Base Login : {{ data.sqls.username }}</li>
+        <li class="col-md-3 col-sm-4">Data Base Password : {{ data.sqls.password }}</li>
+        <li class="col-md-3 col-sm-4">Data Base Url : {{ data.sqls.url }}</li>
+    {% endif %}
+
+    <li class="col-md-3 col-sm-4">Ips : {{ data.ips.ip }}</li>
+    <li class="col-md-3 col-sm-4">Host : {{ data.hosts.nomHost }}</li>
+    <li class="col-md-3 col-sm-4">Type de projet : {{ data.typeProjet.value }}</li>
+</ul>

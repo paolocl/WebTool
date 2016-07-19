@@ -1,0 +1,103 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Registrar
+ *
+ * @ORM\Table(name="registrar")
+ * @ORM\Entity
+ */
+class Registrar
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=6000, nullable=false)
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=6000, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dns1", type="string", length=6000, nullable=false)
+     */
+    private $dns1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dns2", type="string", length=6000, nullable=false)
+     */
+    private $dns2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adminServeur", type="string", length=6000, nullable=false)
+     */
+    private $adminserveur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prix", type="string", length=6000, nullable=false)
+     */
+    private $prix;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=6000, nullable=false)
+     */
+    private $commentaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=6000, nullable=false)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mail", type="string", length=6000, nullable=false)
+     */
+    private $mail;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="next_update_domain", type="datetime", nullable=true)
+     */
+    private $nextUpdateDomain;
+
+
+}
+

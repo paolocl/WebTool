@@ -1,0 +1,6 @@
+app_bundle_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+app_bundle_site:
+    path:     /{id}
+    defaults: { _controller: AppBundle:Default:getSite }

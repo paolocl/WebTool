@@ -1,0 +1,18 @@
+page_speed_api_homepage:
+    path:     /
+    defaults: { _controller: PageSpeedApiBundle:Default:index }
+page_speed_api_result:
+    path:     /result
+    defaults: { _controller: PageSpeedApiBundle:Default:result }
+page_speed_api_craw_result:
+    path:     /crawl
+    defaults: { _controller: PageSpeedApiBundle:Default:crawlForResult }
+page_speed_api_craw_temporary:
+    path:     /crawl/temporary
+    defaults: { _controller: PageSpeedApiBundle:Default:crawlTemporary }
+page_speed_api_seo_Tool:
+    path:     /seo-tool
+    defaults: { _controller: PageSpeedApiBundle:Default:seoTool }
+page_speed_api_table:
+    path:     /table
+    defaults: { _controller: PageSpeedApiBundle:Default:table }

@@ -1,0 +1,61 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PageSpeed
+ *
+ * @ORM\Table(name="page_speed")
+ * @ORM\Entity
+ */
+class PageSpeed
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="desktop", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $desktop;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="mobile", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $mobile;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="old_mobile", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $oldMobile;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="old_desktop", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $oldDesktop;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="last_update", type="integer", nullable=true)
+     */
+    private $lastUpdate;
+
+
+}
+

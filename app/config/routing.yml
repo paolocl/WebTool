@@ -1,0 +1,17 @@
+orm:
+    resource: "@ORMBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app_bundle:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /sites
+
+page_speed_api:
+    resource: "@PageSpeedApiBundle/Resources/config/routing.yml"
+    prefix:   /pagespeed
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

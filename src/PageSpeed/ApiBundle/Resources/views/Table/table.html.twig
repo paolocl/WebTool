@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Les pagespeeds de Pullmedia</h1>
+    {% if data is defined %}
+        <table>
+            <thead>
+            <tr>
+                <th>URL</th>
+                <th>PS DESKTOP</th>
+                <th>PS MOBILE</th>
+                <th>PS ANCIEN DESKTOP</th>
+                <th>PS ANCIEN MOBILE</th>
+                <th>Dernier mise à jour</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for url in data %}
+                    <tr>
+                        {% if url.url is defined %}<td>{{ url.url }}</td>{% endif %}
+                        {% if url.desktop is defined %}<td>{{ url.desktop }}</td>{% endif %}
+                        {% if url.mobile is defined %}<td>{{ url.mobile }}</td>{% endif %}
+                        {% if url.oldMobile is defined %}<td>{{ url.oldMobile }}</td>{% endif %}
+                        {% if url.oldDesktop is defined %}<td>{{ url.oldDesktop }}</td>{% endif %}
+                        {% if url.lastUpdate is defined %}<td>{{ url.lastUpdate|date("d/m/Y") }}</td>{% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+<p>Ca prend du temps</p>
+<a href="{{ url('page_speed_api_craw_result') }}">Refresh</a>
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        table tbody tr:nth-child(odd){
+            background: darkgrey;
+        }
+    </style>
+    
+    
+{% endblock %}

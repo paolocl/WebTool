@@ -1,0 +1,20 @@
+<body>
+    <form action="{{ url('page_speed_api_result') }}" method="post">
+        <input type="text" name="url">
+        <input type="submit">
+    </form>
+
+    {% if dataMobile is defined and dataDesktop is defined %}
+        <h1>{{ dataMobile.id }}</h1>
+        <p>Mobile : {{ dataMobile.ruleGroups.SPEED.score }}</p>
+        <p>Desktop : {{ dataDesktop.ruleGroups.SPEED.score }}</p>
+        <p>Locate : {{ dataDesktop.formattedResults.locale }}</p>
+        {#<img src="data:{{ dataDesktop.screenshot.mime_type }};base64,{{ dataDesktop.screenshot.data|replace({'_' : '/', '-' : '+'}) }}" width="{{ dataDesktop.screenshot.width }}" height="{{ dataDesktop.screenshot.height }}">#}
+        {{ dump(dataMobile) }}
+        {{ dump(dataDesktop) }}
+    {% endif %}
+
+    {% if file is defined %}
+        {{ dump(file) }}
+    {% endif %}
+</body>

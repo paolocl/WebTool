@@ -1,0 +1,128 @@
+<?php
+
+namespace ORMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * OptionsRelations
+ *
+ * @ORM\Table(name="options_relations")
+ * @ORM\Entity
+ */
+class OptionsRelations
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_relation", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idRelation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_options", type="integer", nullable=false)
+     */
+    private $idOptions;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_objet", type="integer", nullable=false)
+     */
+    private $idObjet;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=10, nullable=false)
+     */
+    private $type = 'site';
+
+
+
+    /**
+     * Get idRelation
+     *
+     * @return integer
+     */
+    public function getIdRelation()
+    {
+        return $this->idRelation;
+    }
+
+    /**
+     * Set idOptions
+     *
+     * @param integer $idOptions
+     *
+     * @return OptionsRelations
+     */
+    public function setIdOptions($idOptions)
+    {
+        $this->idOptions = $idOptions;
+
+        return $this;
+    }
+
+    /**
+     * Get idOptions
+     *
+     * @return integer
+     */
+    public function getIdOptions()
+    {
+        return $this->idOptions;
+    }
+
+    /**
+     * Set idObjet
+     *
+     * @param integer $idObjet
+     *
+     * @return OptionsRelations
+     */
+    public function setIdObjet($idObjet)
+    {
+        $this->idObjet = $idObjet;
+
+        return $this;
+    }
+
+    /**
+     * Get idObjet
+     *
+     * @return integer
+     */
+    public function getIdObjet()
+    {
+        return $this->idObjet;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return OptionsRelations
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+}

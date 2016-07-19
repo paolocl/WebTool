@@ -1,0 +1,4 @@
+[2016-07-18 10:11:09] assetic.ERROR: The template "SecurityBundle:Collector:security.html.twig" contains an error: Unknown "profiler_dump" function in "SecurityBundle:Collector:security.html.twig" at line 180. [] []
+[2016-07-18 10:11:09] assetic.ERROR: The template "AppBundle:Default:index.html.twig" contains an error: Unknown "dump" function in "AppBundle:Default:index.html.twig" at line 13. [] []
+[2016-07-18 10:11:09] assetic.ERROR: The template "PageSpeedApiBundle:Default:index.html.twig" contains an error: Unknown "dump" function in "PageSpeedApiBundle:Default:index.html.twig" at line 13. [] []
+[2016-07-18 10:11:10] assetic.ERROR: The template ":default:index.html.twig" contains an error: Unknown "dump" function in ":default:index.html.twig" at line 4. [] []
