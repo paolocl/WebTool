@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ dump(data.0.analytics) }}
-    {{ dump(data) }}
     <section class="container-fluid">
     {% for site in data %}
         <ul class="col-xs-12 list-group list-unstyled">
             <li class="col-xs-12 list-group-item">
                 <ul class="col-xs-12 list-group list-unstyled">
-                    <li class="col-md-3 col-sm-4 col-xs-6">{{ site.nom }}</li>
-                    <li class="col-md-3 col-sm-4 col-xs-6"><a href="{{ site.backOffice.urlAdmin }}" target="_blank">Back Office</a></li>
-                    <li class="col-md-3 col-sm-4 col-xs-6">Login Back Office : {{ site.backOffice.userAdmin }}</li>
-                    <li class="col-md-3 col-sm-4 col-xs-6">Password Back Office : {{ site.backOffice.passAdmin }}</li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">{{ site.nom }}</li>
+                    <li class="col-md-2 col-sm-4 col-xs-6"><a href="http://{{ site.backOffice.urlAdmin|replace({'%http://%': ''}) }}" target="_blank">Back Office</a></li>
+                    <li class="col-md-2 col-sm-4 col-xs-6"><a href="http://{{ site.urls.url|replace({'%http://%': ''}) }}" target="_blank">Site</a></li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">Login Back Office : {{ site.backOffice.userAdmin }}</li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">Password Back Office : {{ site.backOffice.passAdmin }}</li>
                 </ul>
             </li>
             <li class="readMore col-xs-12 list-group-item" data-url="{{ url('app_bundle_site', {'id': site.id}) }}">Read More</li>
+            <li class="readMore col-xs-12 list-group-item" data-url="{{ url('app_bundle_edit_site', {'id': site.id}) }}">Edit</li>
             <li class="col-xs-12 list-group-item"></li>
         </ul>
     {% endfor %}

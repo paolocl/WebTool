@@ -1,30 +1,26 @@
 <ul class="col-xs-12 list-unstyled">
-    <li class="col-md-3 col-sm-4">Name : {{ data.nom }}</li>
-    {% if data.idPageSpeed is not null %}
-        <li class="col-md-3 col-sm-4">PageSpeed Desktop : {{ data.pageSpeed.desktop }}</li>
-        <li class="col-md-3 col-sm-4">PageSpeed Mobile : {{ data.pageSpeed.mobile }}</li>
-        <li class="col-md-3 col-sm-4">PageSpeed Last update : {{ data.pageSpeed.lastUpdate }}</li>
-    {% endif %}
-    <li class="col-md-3 col-sm-4">FTP Url : {{ data.urls.url }}</li>
-    <li class="col-md-3 col-sm-4">FTP Loggin : {{ data.ftps.user }}</li>
-    <li class="col-md-3 col-sm-4">FTP Password : {{ data.ftps.password }}</li>
-    <li class="col-md-3 col-sm-4">Analitycs code : {{ data.analytics }}</li>
-    <li class="col-md-3 col-sm-4">Registrar Name : {{ data.registrar.nom }}</li>
-    <li class="col-md-3 col-sm-4">Registrar Login : {{ data.registrar.login }}</li>
-    <li class="col-md-3 col-sm-4">registrar Password : {{ data.registrar.password }}</li>
-    <li class="col-md-3 col-sm-4">DNS1 : {{ data.registrar.dns1 }}</li>
-    <li class="col-md-3 col-sm-4">DNS2 : {{ data.registrar.dns2 }}</li>
-    <li class="col-md-3 col-sm-4">Prix : {{ data.registrar.prix }}</li>
+    <input type="hiiden" value="{{ data.id }}" name="id">
+    <label for="name" class="col-md-3 col-sm-4">Name : <input type="text" value="{{ data.nom }}" name="name" id="name"></label>
+    <label for="" class="col-md-3 col-sm-4">FTP Url : <input type="text" value="{{ data.urls.url }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">FTP Loggin : <input type="text" value="{{ data.ftps.user }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">FTP Password : <input type="text" value="{{ data.ftps.password }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">Analitycs code : <input type="text" value="{{ data.analytics }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">Registrar Name : <input type="text" value="{{ data.registrar.nom }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">Registrar Login : <input type="text" value="{{ data.registrar.login }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">registrar Password : <input type="text" value="{{ data.registrar.password }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">DNS1 : <input type="text" value="{{ data.registrar.dns1 }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">DNS2 : <input type="text" value="{{ data.registrar.dns2 }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">Prix : <input type="text" value="{{ data.registrar.prix }}" name="" id=""></label>
 
     {% if data.sqls is not null %}
-        <li class="col-md-3 col-sm-4">Data Base Host : {{ data.sqls.host }}</li>
-        <li class="col-md-3 col-sm-4">Data Base Name : {{ data.sqls.base }}</li>
-        <li class="col-md-3 col-sm-4">Data Base Login : {{ data.sqls.username }}</li>
-        <li class="col-md-3 col-sm-4">Data Base Password : {{ data.sqls.password }}</li>
-        <li class="col-md-3 col-sm-4">Data Base Url : {{ data.sqls.url }}</li>
+        <label for="" class="col-md-3 col-sm-4">Data Base Host : <input type="text" value="{{ data.sqls.host }}" name="" id=""></label>
+        <label for="" class="col-md-3 col-sm-4">Data Base Name : <input type="text" value="{{ data.sqls.base }}" name="" id=""></label>
+        <label for="" class="col-md-3 col-sm-4">Data Base Login : <input type="text" value="{{ data.sqls.username }}" name="" id=""></label>
+        <label for="" class="col-md-3 col-sm-4">Data Base Password : <input type="text" value="{{ data.sqls.password }}" name="" id=""></label>
+        <label for="" class="col-md-3 col-sm-4">Data Base Url : <input type="text" value="{{ data.sqls.url }}" name="" id=""></label>
     {% endif %}
 
-    <li class="col-md-3 col-sm-4">Ips : {{ data.ips.ip }}</li>
-    <li class="col-md-3 col-sm-4">Host : {{ data.hosts.nomHost }}</li>
-    <li class="col-md-3 col-sm-4">Type de projet : {{ data.typeProjet.value }}</li>
+    <label for="" class="col-md-3 col-sm-4">Ips : <input type="text" value="{{ data.ips.ip }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">Host : <input type="text" value="{{ data.hosts.nomHost }}" name="" id=""></label>
+    <label for="" class="col-md-3 col-sm-4">Type de projet : <input type="text" value="{{ data.typeProjet.value }}" name="" id=""></label>
 </ul>
